@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
+  "title": "Menu",
+  "description": "Menu list for having multiple submenus with actions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "description": "Submenu object",
+    "properties": {
+      "name": {
+        "description": "Name of Submenu",
+        "type": "string"
+      },
+      "symbol": {
+        "description": "Symbol showing the Submenu",
+        "type": "string"
+      },
+      "entries": {
+        "description": "Array of entries, each entry is an action",
+        "type": "array",
+        "items":{
+          "type": "object",
+          "description": "Submenu object",
+          "properties": {
+            "name": {
+              "description": "Name of action",
+              "type": "string"
+            },
+            "action": {
+              "description": "Type of action",
+              "type": "string"
+            },
+            "action_copy": {
+              "description": "data for tthe action",
+              "type": "string"
+            }
+          },
+          "required": [ "name", "action" ]
+        }
+      }
+    },
+    "required": [ "name", "symbol", "entries" ]
+  }
+}
